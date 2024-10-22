@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" href="css/style.css">
+    <title>Første side </title>
+</head>
+<body>
+    <h1>Hello world !</h1>
+
+<script> 
+ //переменные
+let Tall1 = 15;
+let Tall2 = 10;
+let Sum = Tall1+ Tall2 ;
+    console.log (Tall1 + Tall2 + Sum);
+
+//условия
+    
+let number = 2;
+if (number > 5) {
+    console.log ("Number more then 5");
+} else {
+    console.log ("Number litte then 5");
+}
+</script>
+
+<!--не упорядоченный список--> 
+<ul> 
+    <li> Kanin</li>
+    <li> Hamster</li>
+</ul>
+<!-- упорядоченный список-->
+<ol>
+    <li>Katt</li>
+    <li>Hund</li>
+</ol>
+
+<!--таблица с рядами Border - граница таблицы-->
+<table border="1"> 
+    <tr> <!-- Ряд в таблице -->
+        <td width="200px" velign="top"> <!--ячейка в таблице-->
+            <h2>Meny</h2>
+                <ul>
+                    <li><a href="meny_side1.html" target="contentFrame">Innhold 1</a></li>
+                    <li><a href="meny_side2.html" target="contentFrame">Innhold 2</a></li>
+                    <li><a href="meny_side3.html" target="contentFrame">Innhold 3</a></li>
+                </ul>
+        </td>
+         
+        <td velign="top" width="150px"  colspan="2"> 
+            <iframe name="contentFrame" width="100%" height="500px" frameborder="0"></iframe>
+        </td>
+        <td width="30%">
+            <p> Text</p>
+        </td>
+    </tr>
+    <tr><td height="100px" width="200px" colspan="2"></td><td width="30%"> </td></tr>
+</table>
+
+<!--Форма для заполнения-->
+<form action="helloworld.html" method="post"> 
+    <label> Name:  <input type="text" name="name" required> </label> <br>
+    <label> E-mail: <input type="email" name="email" required> </label> <br>
+    <input type="submit" value="Send">
+</form>
+<!--Форма для заполнения-->
+
+
+
+
+
+
+
+
+
+<a href="https://flexboxfroggy.com/"> Game with flexbox </a> <!--ссылка любая-->
+<img src="img/sun.jpeg.jpg"style = "float:left" width = "400" height="350"> <!--любое изображение-->
+
+
+<div> <h2>Dette er en ny linje </h2> <br> <p> Dette er andre ny linje </p> </div>
+
+<h3>tekst</h3>
+
+
+</body>
+</html>

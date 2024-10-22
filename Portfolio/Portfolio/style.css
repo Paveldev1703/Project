@@ -1,0 +1,497 @@
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+    user-select: none;
+}
+
+/* Common Section Styling */
+section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-bottom: 1px solid #333;
+}
+
+.image-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+    transition: transform 0.5s ease;
+}
+
+.image-content:hover img {
+    transform: scale(1.05);
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px 40px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* CONTACT SECTION */
+
+  
+  .wrapper {
+    display: inline-flex;
+    list-style: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .wrapper .icon {
+    background: #000000;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: -35px;
+    background: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .wrapper .icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .facebook:hover {
+    background: #1877f2;
+  }
+  
+  .twitter:hover {
+    background: #1da1f2;
+  }
+  
+  .instagram:hover {
+    background: #e4405f;
+  }
+
+
+
+
+/* Animation */
+button {
+    background: #fff;
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    width: 120px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+  }
+  
+  .text-button {
+    display: inline-block;
+    transform: skew(21deg);
+  }
+  
+  button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: rgb(20, 20, 20);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+  
+  button:hover {
+    color: #fff;
+  }
+  
+  button:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+h1, h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+
+
+/* Hero Section */
+.hero {
+    background: url('img/hero.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background: url('img/testemonials 2.jpg') no-repeat center center/cover;
+    text-align: center;
+    padding: 50px;
+    background-color: #1e1e1e;
+}
+
+.testimonial-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    flex: 0 0 30%;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    h1, h2 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .text-overlay {
+        width: 80%;
+    }
+
+    .card {
+        flex: 0 0 80%;
+    }
+}
+
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+    user-select: none;
+}
+
+/* Common Section Styling */
+section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-bottom: 1px solid #333;
+}
+
+/* Before-After Section */
+
+.beforafter-text {
+    font-size: 40px; /* Размер шрифта */
+    color: white; /* Цвет текста */
+    text-shadow: 
+        -1px -1px 0px black,  
+        1px -1px 0px black,
+        -1px 1px 0px black,
+        1px 1px 0px black; /* Обводка текста */
+}
+
+
+
+
+.beforeafter {
+    background: url('img/beforeafter.jpg') no-repeat center center/cover;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.before-after-section {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Flex container for comparison blocks */
+.comparison-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+    justify-content: center; /* Center items */
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Container for each comparison block */
+.comparison-container {
+    position: relative;
+    width: 500px;  /* Adjust width */
+    height: 300px; /* Adjust height */
+    overflow: hidden;
+    border: 2px solid #ffffff; /* Border color for visibility */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+    margin: 20px; /* Added margin for spacing */
+}
+
+/* Images in the container */
+.comparison-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Before Image */
+.comparison-image.before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* After Image with immediate clip-path */
+.comparison-image.after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    clip-path: inset(0 50% 0 0); /* Initially show half */
+}
+
+/* Slider */
+.slider {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Centered by default */
+    width: 4px;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 3;
+    cursor: ew-resize;
+}
+
+.slider:hover {
+    background-color: #ff1a1a; /* Change color on hover */
+}
+
+/* Testimonials Section */
+.testimonials {
+    text-align: center;
+    padding: 50px;
+    background-color: #1e1e1e;
+}
+
+.testimonial-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    flex: 0 0 30%;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    h1, h2 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .card {
+        flex: 0 0 80%;
+    }
+
+    .comparison-container {
+        height: 150px; /* Adjust the size for smaller screens */
+        width: 90%; /* Responsive width */
+    }
+}
+
+/* Registration */
+
+.registration {
+    background: url('img/registration.jpg') no-repeat center center/cover;
+}
+
+.registration-container {
+    background-color: #d3d3d3; /* Белый фон для формы */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень */
+    padding: 30px; /* Внутренние отступы */
+    width: 400px; /* Ширина контейнера */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+h1 {
+    margin-bottom: 20px; /* Отступ снизу */
+    color: #333; /* Цвет заголовка */
+}
+
+.input-group {
+    margin-bottom: 20px; /* Отступ снизу для группировки */
+}
+
+label {
+    display: block; /* Блочный элемент */
+    margin-bottom: 5px; /* Отступ снизу для метки */
+    color: #555; /* Цвет метки */
+}
+
+input {
+    width: 100%; /* Полная ширина */
+    padding: 10px; /* Внутренние отступы */
+    border: 1px solid #ddd; /* Цвет границы */
+    border-radius: 4px; /* Скругление углов */
+    font-size: 16px; /* Размер шрифта */
+    transition: border-color 0.3s; /* Плавный переход для изменения цвета границы */
+}
+
+input:focus {
+    border-color: #007bff; /* Цвет границы при фокусировке */
+    outline: none; /* Убираем стандартный обвод */
+}
+
+.register-btn {
+    background-color: #007bff; /* Цвет кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем границу */
+    padding: 10px 15px; /* Внутренние отступы */
+    border-radius: 4px; /* Скругление углов */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Курсор в виде руки */
+    transition: background-color 0.3s; /* Плавный переход для изменения цвета фона */
+}
+
+.register-btn:hover {
+    background-color: #0056b3; /* Цвет кнопки при наведении */
+}
+
+.login-redirect {
+    margin-top: 20px; /* Отступ сверху */
+    color: #777; /* Цвет текста */
+}
+
+.login-redirect a {
+    color: #007bff; /* Цвет ссылки */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.login-redirect a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+
