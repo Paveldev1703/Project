@@ -47,3 +47,30 @@ document.querySelectorAll('.comparison-container').forEach(container => {
         document.addEventListener('touchend', onTouchEnd);
     });
 });
+
+//Menu
+document.getElementById("menu-button").addEventListener("click", function() {
+    const dropdown = document.getElementById("dropdown");
+    // Проверяем, скрыто ли выпадающее меню
+    if (dropdown.style.display === "block") {
+        dropdown.style.display = "none"; // Скрываем меню
+    } else {
+        dropdown.style.display = "block"; // Показываем меню
+    }
+});
+
+// Закрываем меню при клике вне его
+window.onclick = function(event) {
+    if (!event.target.matches('.menu-button')) {
+        const dropdown = document.getElementById("dropdown");
+        if (dropdown.style.display === "block") {
+            dropdown.style.display = "none"; // Скрываем меню
+        }
+    }
+}
+
+// Открытие и закрытие меню при нажатии на кнопку
+document.getElementById("menu-button").addEventListener("click", function() {
+    const menu = document.getElementById("menu-container");
+    menu.classList.toggle("active"); // Переключение класса для показа меню
+});

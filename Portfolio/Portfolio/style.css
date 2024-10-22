@@ -59,6 +59,41 @@ section {
     animation: fadeIn 1s ease-in-out;
 }
 
+/* Menu section*/
+.menu-container {
+    position: fixed; /* Фиксируем меню */
+    top: 0; /* Устанавливаем отступ сверху */
+    left: 0; /* Устанавливаем отступ слева */
+    width: 200px; /* Ширина меню */
+    height: 100%; /* Высота меню */
+    color: white; /* Цвет текста */
+    padding: 20px; /* Отступы внутри меню */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Тень для эффекта глубины */
+}
+
+.sidebar h2 {
+    margin: 0 0 20px 0; /* Отступы для заголовка */
+}
+
+.sidebar ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+}
+
+.sidebar ul li {
+    margin: 10px 0; /* Отступы между элементами списка */
+}
+
+.sidebar ul li a {
+    color: white; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+
 /* CONTACT SECTION */
 
   
@@ -66,7 +101,7 @@ section {
     display: inline-flex;
     list-style: none;
     position: absolute;
-    top: 20px;
+    top: 30px;
     right: 20px;
   }
   
@@ -257,21 +292,6 @@ p {
     }
 }
 
-
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #121212;
-    color: #fff;
-    line-height: 1.6;
-    user-select: none;
-}
 
 /* Common Section Styling */
 section {
