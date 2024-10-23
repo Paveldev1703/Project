@@ -1,0 +1,69 @@
+/* Основные стили */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Общие стили для параллакс-секций */
+.parallax {
+    height: 100vh; /* Высота секции - полный экран */
+    background-attachment: fixed; /* Эффект параллакса */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Параллакс-фоны */
+.parallax1 {
+    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0');
+}
+
+.parallax2 {
+    background-image: url('https://images.unsplash.com/photo-1517817742770-d922f82d50e6');
+}
+
+.parallax3 {
+    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0');
+}
+
+/* Содержание в параллакс-секциях */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.content h1 {
+    font-size: 48px;
+    margin: 0;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.content p {
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+/* Контентные секции */
+.content-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.content-section h2 {
+    font-size: 36px;
+}
+
+.content-section p {
+    font-size: 16px;
+    line-height: 1.6;
+}
