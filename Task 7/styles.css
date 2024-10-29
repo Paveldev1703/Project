@@ -15,6 +15,19 @@ body {
     line-height: 1.6;
 }
 
+
+/* Logo Styles */
+.logo{
+    font-family: 'Almendra Display';
+    font-size: 60px;
+    position: absolute;
+    top: 20px; 
+    left: 45px; 
+    
+}
+
+
+/* Container Styles */
 .text_container {
     margin-top: 150px;
 
@@ -185,7 +198,7 @@ nav ul li a:hover span {
 
 .main_text {
     max-width: 1300px;
-    margin: 20px auto;
+    margin: 10px auto;
     padding: 40px;
     position: relative;
     
@@ -199,13 +212,11 @@ nav ul li a:hover span {
 .description {
     font-size: 20px;
     color: rgb(226, 226, 226);
+    text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Avatar Styles */
 
-.avatar {
-    
-}
 
 .avatar_img {
     position: absolute;
