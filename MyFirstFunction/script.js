@@ -14,6 +14,7 @@ function sum (Numb1,Numb2){
 console.log (Total);
 
 
+
 // let og const som nøkkelordå opprette variabler 
 // const forNavn = "Pavel";
 // const alder = 18.9;
@@ -49,24 +50,67 @@ console.log (Total);
 
 //  Aritmetiske Operatorer
 // ----------------------------------------------------
+// PEMDAS -> Rekkefølge for matematiske kalkulasjoner. 
 // + - * / % er operatorer 
-// Brøk 1 
-// ----
+// Brøk skrives som venlig deling.
+//   1 
+// -----
 //   4   = 1/4
 // = Tilordningsoperator
+// 
+// Shorthand operators:
 // +=, -=, *=, /=, %= Eks: alder += 1; => alder = alder + 1;
- 
-let navn = "John";
-let alder = 17;
-let alder2; //deklarasjon
-// let sumAlder = 0;
-alder2 = 10;
-// sumAlder = alder / alder2; 
-alder = alder + alder2;
-alder += alder2; // En hurtigere måte å skrive linje ovenfor på.
-alder2 = alder2 / 0;
+// ++ -- Øker eller minker variabelen med 1. Syntax: alder++;
+// varNavn++ eller varNavn-- -> Øker eller minker variabelen med 1 etter at uttrykket er beregnet. Syntax: alder++; Porstfix: Post= Etter
 
-//console.log(alder);
+// ++varNavn eller --varNavn -> Øker eller minker variabelen med 1 før resten av uttrykket blir beregnet. Syntax: --alder; Prefiks: Pre= Før
+
+
+
+
+// let navn = "John";
+// let alder = 17;
+// let alder2; //deklarasjon
+// let sumAlder = 0;
+// alder2 = 10;
+// sumAlder = alder / alder2; 
+// alder = alder + alder2;
+// alder += alder2; // En hurtigere måte å skrive linje ovenfor på.
+// alder2 = 4 ** 2; // Adre språk bruker ^ istedet for **
+// ader2 = alder2 /0;
+
+// console.log(alder);
 // console.log(alder +1);
-console.log(alder2);
+//console.log(alder2);
 // console.log(sumAlder);
+
+
+
+
+// Sammenlignings operatorer:
+// -----------------------------------------
+// <, >, <=, >=, ==, !=
+// == -> Sammenlihning verdier uavhenging av datatype
+// === -> Sammenlihning verdier og datatype....BRUK DENNE !!!!!
+
+
+
+
+let tall = 1;
+let sann = false;
+let usann = false;
+
+
+// Conditionals:
+// -------------------------------------------
+// if (uttrykk) {
+//
+// }
+//
+// uttrykk må kunne evalueres som sann/usann ( end: true/false )
+
+if (tall === "1") { // kode som kommer mellom {} er inne i en kode blokk
+  console.log("Dette var sant")
+  console.log(tall);
+  tall = tall + 1;
+}
