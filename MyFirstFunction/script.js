@@ -7,7 +7,7 @@ console.log(Name,Surname);
 let Numb1 = 4;
 let Numb2 = 20;
 let Total;
-total = sum(Numb1,Numb2);
+Total = sum(Numb1,Numb2);
 function sum (Numb1,Numb2){
   return Numb1 + Numb2;
 }
@@ -92,13 +92,26 @@ console.log (Total);
 // <, >, <=, >=, ==, !=
 // == -> Sammenlihning verdier uavhenging av datatype
 // === -> Sammenlihning verdier og datatype....BRUK DENNE !!!!!
+// > -> Hvis det er større enn
+// < -> Hvis det er mindre enn
+// >= -> Hvis det er større eller lik
+// <= -> Hvis det er mindre eller lik
+// != -> Hvis det er ulik
 
 
 
+// let sann = false;
+// let usann = false;
 
-let tall = 1;
-let sann = false;
-let usann = false;
+
+// Logiske operatorer:
+// -----------------------------------------
+// && -> logisc AND operator
+// || -> eller
+// ! -> ikke
+
+
+
 
 
 // Conditionals:
@@ -109,8 +122,37 @@ let usann = false;
 //
 // uttrykk må kunne evalueres som sann/usann ( end: true/false )
 
-if (tall === "1") { // kode som kommer mellom {} er inne i en kode blokk
-  console.log("Dette var sant")
-  console.log(tall);
-  tall = tall + 1;
+
+//console.log(typeof alder);
+//console.log(typeof 1);
+
+let alder = 41;
+
+
+console.log(alder >= 18);
+console.log(alder < 40);
+console.log(alder >= 18 && alder < 40);
+
+if (alder >= 18 && alder < 40) { // kode som kommer mellom {} er inne i en kode blokk
+  // Dette blokken kjører hvis uttrykket er sann/usann
+  console.log("Du er over 18 år og under 40 år") 
+  //console.log(alder);
+  //alder = alder + 1;
 }
+  else{
+    //Denne blokken blir kjørt når uttrykket evalueres til false/usann
+    console.log("Din alder er utenfor målgruppen vår"); 
+  }
+
+
+
+//   if (alder < 40) { // kode som kommer mellom {} er inne i en kode blokk
+//   // Dette blokken kjører hvis uttrykket er sann/usann
+//   console.log("Du er under 40") 
+//   //console.log(alder);
+//   //alder = alder + 1;
+// }
+//   else{
+//     //Denne blokken blir kjørt når uttrykket evalueres til false/usann
+//     console.log("Du er over 40"); 
+//   }
