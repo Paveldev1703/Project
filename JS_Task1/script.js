@@ -153,3 +153,40 @@ console.log(checkVocal("å"));
 
 // Eleventh function.
 //----------------------------------------------------
+function checkSeason(month){
+   month = month.toLowerCase();
+   switch(month){
+       case "december":
+       case "january":
+       case "february":
+           return "Winter";
+       case "march":
+       case "april":
+       case "may":
+           return "Vår";
+       case "june":
+       case "july":
+       case "august":
+           return "Sommer";
+       case "september":
+       case "october":
+       case "november":
+           return "Høst";
+       default:
+           return "Ukjent";
+   }    
+}
+console.log(checkSeason("April"));
+
+// Twelfth function.
+//----------------------------------------------------
+let weatherlist = ["Rain", "Sunny", "Cloudy", "Snow"];
+    function Weather(){
+        console.log(weatherlist.slice(1, -1));
+    }
+    let weatherlist2 = ["Rain", "Sunny", "Cloudy", "Snow"];
+    function Weather2 (list){
+        console.log(list.slice(1, -1));
+    }
+    Weather2(weatherlist2);
+    console.log(weatherlist2);  
