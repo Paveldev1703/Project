@@ -120,5 +120,58 @@ if (checker.length === textSpliter.length) {
   console.log("We don't have same words in text");
 }
 
-// diamand
+// Eleventh Loop
+//----------------------------------------------------
 
+tall1 = 10;
+tall2 = 20;
+
+let x;
+x=tall1;
+tall1=tall2;
+tall2=x;
+console.log("Tall1=",tall1);
+console.log("Tall2=",tall2);
+
+//Twelfth Loop
+//----------------------------------------------------
+
+function fibonacci(n) {
+  let sequence = [0, 1];
+  for (let i = 2; i < n; i++) {
+    sequence[i] = sequence[i - 1] + sequence[i - 2];
+  }
+  return sequence;
+}
+console.log(fibonacci(10));
+
+//Thirteenth Loop
+//---------------------------------------------------- 
+
+function primeNumbers(n) {
+  let prime = [];
+  for (let i = 2; i <= n; i++) {
+    if (prime[i]) continue;
+    for (let j = i * i; j <= n; j += i) {
+      prime[j] = true;
+    }
+  }
+  return prime;
+}
+console.log(primeNumbers(10));
+
+//14th Loop
+//----------------------------------------------------
+
+let sort = [2, 4, 3, 8, 5, 6, 1, 7, 9, 10];
+
+for (let i = 0; i < sort.length; i++) {
+  for (let j = i + 1; j < sort.length; j++) {
+    if (sort[i] > sort[j]) {
+      let temp = sort[i];
+      sort[i] = sort[j];
+      sort[j] = temp;
+    }
+  }
+}
+console.log(sort);
