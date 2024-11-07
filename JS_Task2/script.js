@@ -85,20 +85,20 @@ for (let i = 0; i < 4; i++){
 //Ninth Loop
 //---------------------------------------------------- !VOPROSIKI
 
-// function drawDiamond(maxStars) {
-//   let pattern = '';
+function drawDiamond(maxStars) {
+  let pattern = '';
 
-//   for (let i = 1; i <= maxStars; i += 2) {
-//     pattern += ' '.repeat((maxStars - i) / 2) + '*'.repeat(i) + '\n';
-//   }
-//   for (let i = maxStars - 2; i >= 1; i -= 2) {
-//     pattern += ' '.repeat((maxStars - i) / 2) + '*'.repeat(i) + '\n';
-//   }
-//   console.log(pattern);
-// }
+  for (let i = 1; i <= maxStars; i += 2) {
+    pattern += ' '.repeat((maxStars - i) / 2) + '*'.repeat(i) + '\n';
+  }
+  for (let i = maxStars - 2; i >= 1; i -= 2) {
+    pattern += ' '.repeat((maxStars - i) / 2) + '*'.repeat(i) + '\n';
+  }
+  console.log(pattern);
+}
 
 
-// drawDiamond(19);
+drawDiamond(7);
  
 //Tenth Loop
 //----------------------------------------------------
@@ -120,4 +120,5 @@ if (checker.length === textSpliter.length) {
   console.log("We don't have same words in text");
 }
 
-  
+// diamand
+
