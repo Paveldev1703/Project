@@ -141,19 +141,16 @@ console.log(direction("^>v<"));
 
 // Eighth function
 // ------------------------------------------------
-function Factorial(num) {
-    const factors = [];
-    for (let i = 2; i <= num; i++) {
-        while (num % i === 0) {
-            factors.push(i);
-            num /= i;
-        }
+function fuc3(n){
+    let result = 1;
+    
+    for (let i = 1; i <= n; i++){
+        result *= i;
     }
-    return factors.length > 0 ? factors : [1];
+    return result;
 }
 
-console.log(Factorial(10)); // [2, 5]
-console.log(Factorial(12)); // [2, 2, 3]
+console.log(fuc3(5));
 
 // Nineth function
 // ------------------------------------------------
