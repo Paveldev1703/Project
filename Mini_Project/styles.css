@@ -154,6 +154,12 @@ nav ul li:hover > ul {
 /* Second Section */
 /*-------------------------------------------------------------------*/
 
+.reviews-section .buttons a{
+  list-style: none;
+  text-decoration: none;
+  color: #000;
+}
+
 .reviews-section {
   padding: 40px;
   max-width: 1200px;
