@@ -139,9 +139,11 @@ frukter.sort((a,b) => a.length - b.length);
 
 // Oppgave 1
 
+const carList = ['Toyota', 'BMW', 'Mercedec', 'Mazda', 'Peugeot', 'Honda', 'Audi', 'Volvo', 'Ford', 'Saab',];
 
+const startWithThirdLetter = carList.forEach(car => car[3]);
 
-
+console.log(startWithThirdLetter);
 
 // Oppgave 2
 function addSymbol(nummer, callback){
