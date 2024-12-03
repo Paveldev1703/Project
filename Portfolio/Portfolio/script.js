@@ -4,8 +4,8 @@ document.querySelectorAll('.comparison-container').forEach(container => {
 
     const updateSlider = (event) => {
         const containerRect = container.getBoundingClientRect();
-        const x = event.clientX - containerRect.left; // Позиция курсора в пределах контейнера
-        const percentage = Math.min(Math.max(x / containerRect.width, 0), 1); // Ограничение от 0 до 1
+        const x = event.clientX - containerRect.left; 
+        const percentage = Math.min(Math.max(x / containerRect.width, 0), 1); 
         
         slider.style.left = `${percentage * 100}%`; // Положение слайдера
         afterImage.style.clipPath = `inset(0 ${100 - percentage * 100}% 0 0)`; // Обновление clip-path
@@ -30,7 +30,6 @@ document.querySelectorAll('.comparison-container').forEach(container => {
         document.addEventListener('mouseup', onMouseUp);
     });
 
-    // Для поддержки сенсорных устройств
     slider.addEventListener('touchstart', (event) => {
         event.preventDefault();
         updateSlider(event.touches[0]);
@@ -73,4 +72,18 @@ window.onclick = function(event) {
 document.getElementById("menu-button").addEventListener("click", function() {
     const menu = document.getElementById("menu-container");
     menu.classList.toggle("active"); // Переключение класса для показа меню
+});
+
+
+// Scroll Text 
+// Отслеживание прокрутки
+window.addEventListener("scroll", function () {
+    const heroContent = document.getElementById("hero-content");
+
+    // Если пользователь прокрутил больше 50px
+    if (window.scrollY > 50) {
+        heroContent.classList.add("hidden"); // Добавляем класс, чтобы скрыть текст
+    } else {
+        heroContent.classList.remove("hidden"); // Убираем класс, чтобы вернуть текст
+    }
 });

@@ -61,36 +61,87 @@ section {
 
 /* Menu section*/
 .menu-container {
-    position: fixed; /* Фиксируем меню */
-    top: 0; /* Устанавливаем отступ сверху */
-    left: 0; /* Устанавливаем отступ слева */
-    width: 200px; /* Ширина меню */
-    height: 100%; /* Высота меню */
-    color: white; /* Цвет текста */
-    padding: 20px; /* Отступы внутри меню */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Тень для эффекта глубины */
+    position: fixed; 
+    top: 0;
+    left: 0; 
+    width: 200px;
+    height: 100%;
+    color: white; 
+    padding: 20px;
+    margin-top: 10px;
+} 
+
+.menu-button {
+    background: #fff;
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    width: 120px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+  }
+  
+  .menu-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: rgb(20, 20, 20);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+  
+  .menu-button:hover {
+    color: #fff;
+  }
+  
+  .menu-button:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+
+
+  #dropdown {
+    display: none; /* Скрываем меню при загрузке страницы */
+  }
+
+
+.dropdown h2 {
+    margin: 0 0 20px 0;
 }
 
-.sidebar h2 {
-    margin: 0 0 20px 0; /* Отступы для заголовка */
+.dropdown ul {
+    margin-top: 10px;
+    margin-left: 20px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    padding: 0; 
 }
 
-.sidebar ul {
-    list-style: none; /* Убираем маркеры списка */
-    padding: 0; /* Убираем отступы */
+.deopdown ul li {
+    cursor: pointer;
+    padding: 10px 0;
+    margin: 10px 0;
 }
 
-.sidebar ul li {
-    margin: 10px 0; /* Отступы между элементами списка */
+.dropdown ul li a {
+    color: white;
+    list-style: none;
+    text-decoration: none;
 }
 
-.sidebar ul li a {
-    color: white; /* Цвет ссылок */
-    text-decoration: none; /* Убираем подчеркивание */
-}
-
-.sidebar ul li a:hover {
-    text-decoration: underline; /* Подчеркивание при наведении */
+.dropdown ul li a:hover {
+    text-decoration: underline; 
 }
 
 
@@ -101,7 +152,7 @@ section {
     display: inline-flex;
     list-style: none;
     position: absolute;
-    top: 30px;
+    top: 10px;
     right: 20px;
   }
   
@@ -155,7 +206,7 @@ section {
 
 
 
-/* Animation */
+/* Animation 
 button {
     background: #fff;
     border: none;
@@ -227,6 +278,8 @@ p {
     color: white;
 }
 
+
+
 .hero-content h1 {
     font-size: 4rem;
     text-align: center;
@@ -238,6 +291,23 @@ p {
     text-align: center;
     margin-top: 20px;
 }
+
+.hero_content {
+    position: fixed; 
+    top: 50%;        
+    left: 50%;       
+    transform: translate(-50%, -50%); 
+    opacity: 1; 
+    transition: transform 1.5s ease, opacity 1.5s ease; 
+  }
+  
+  .hero_content.hidden {
+    transform: translate(-50%, -300%); 
+    opacity: 0;
+  }
+
+
+
 
 /* Testimonials Section */
 .testimonials {

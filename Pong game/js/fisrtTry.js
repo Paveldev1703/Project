@@ -17,6 +17,8 @@ document.addEventListener("keydown", (event) => {
 document.addEventListener("keyup", (event) => {
     
 });
+
+
 // Player 2
 
 let topP2 = 350;

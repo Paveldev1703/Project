@@ -1,58 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hide and Show Navbar</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Block</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <section class="hero">
+    <div class="container">
+      <header class="logo">
+        <h1>DVLPR</h1>
+      </header>
+      <div class="content">
+        <h2>Front-End Software Developer</h2>
+        <p>Resolving design problems, building smart user interfaces and useful interactions, developing rich web applications and seamless web experiences.</p>
+        <a href="#about" class="about-link">About me</a>
+      </div>
+      <div class="illustration">
+        <img src="illustration.svg" alt="Isometric illustration of a developer's desk" />
+      </div>
+      <a href="#contact" class="contact-btn">Contact</a>
+    </div>
 
 
 
-<header>
-    <nav>
+    <div class="scroll-indicator">
         <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Menu</a>
-                <ul>
-                    <li><a href="#">Coffee</a></li>
-                    <li><a href="#">Cake</a></li>
-                    <li><a href="#">Drinks</a></li>
-                </ul>
-            </li>
+          <li data-index="1" class="active">01</li>
+          <li data-index="2">02</li>
+          <li data-index="3">03</li>
+          <li data-index="4">04</li>
         </ul>
-    </nav>
-
-</header>
-
-
-
-
-
+      </div>
+    
+      <section id="section1" class="section">Section 1</section>
+      <section id="section2" class="section">Section 2</section>
+      <section id="section3" class="section">Section 3</section>
+      <section id="section4" class="section">Section 4</section>
 
 
-
-
-
-
-
-
-
-
-
-
-     <!-- Текст по центру -->
-     <div class="scroll-text">
-        SCROLL ME!
+      
+    <div class="scroll-indicator">
+      <p>Scroll Down</p>
+      <span>&#9660;</span>
     </div>
-
-    <!-- Контент для прокрутки -->
-    <div style="height: 200vh; background: linear-gradient(to bottom, #fff, #f0f0f0);">
-        <!-- Создаем место для прокрутки -->
-    </div>
-
-    <script src="script.js"></script>
+  </section>
 </body>
 </html>

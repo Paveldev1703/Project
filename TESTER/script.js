@@ -1,16 +1,44 @@
-// Получаем элемент текста
-const scrollText = document.querySelector('.scroll-text');
+// Scroll indicator interaction (optional)
+document.querySelector('.scroll-indicator').addEventListener('click', () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth',
+    });
+  });
+  
 
-// Следим за скроллом страницы
-window.addEventListener('scroll', () => {
-    // Получаем положение прокрутки страницы
-    const scrollPosition = window.scrollY;
+  // Получаем элементы секций и индикатора
+const sections = document.querySelectorAll(".section");
+const indicatorItems = document.querySelectorAll(".scroll-indicator li");
 
-    // Если прокрутка вниз больше 50px, прячем текст
-    if (scrollPosition > 50) {
-        scrollText.classList.add('hidden');
-    } else {
-        // Если возвращаемся вверх, показываем текст
-        scrollText.classList.remove('hidden');
+// Добавляем обработчик события прокрутки
+window.addEventListener("scroll", () => {
+  let currentSectionIndex = 0;
+
+  // Проверяем, в какой секции находится пользователь
+  sections.forEach((section, index) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+
+    if (window.scrollY >= sectionTop - sectionHeight / 2) {
+      currentSectionIndex = index;
     }
+  });
+
+  // Устанавливаем активный класс для текущей секции
+  indicatorItems.forEach((item, index) => {
+    if (index === currentSectionIndex) {
+      item.classList.add("active");
+    } else {
+      item.classList.remove("active");
+    }
+  });
+});
+
+// Добавляем плавный скроллинг при клике на индикатор
+indicatorItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    const sectionIndex = item.getAttribute("data-index") - 1;
+    sections[sectionIndex].scrollIntoView({ behavior: "smooth" });
+  });
 });

@@ -14,7 +14,7 @@ body {
     overflow: hidden;
 }
 
-/* Middle Line */
+/* Middle Line*/
 .middle-line {
     position: absolute;
     top: 0;
@@ -39,15 +39,17 @@ body {
     width: 10px;
     background-color: white;
     top: 50%;
-    transform: translateY(-50%);
+    
 }
 
 #player1 {
-    left: 20px;
+    left: 2%; 
+    
 }
 
 #player2 {
-    right: 20px;
+    right: 2%; 
+ 
 }
 
 
@@ -100,3 +102,6 @@ body {
 #ball {
     animation: moveBall 1s linear infinite;
 }
+
+
+ 
