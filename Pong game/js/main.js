@@ -11,8 +11,9 @@ const maxScore = 5; // Максимальное количество очков 
 
 // Параметры игры
 // Spill Alternativer
-let ballSpeedX = 4;
-let ballSpeedY = 4;
+let pause = false;
+let ballSpeedX = 5;
+let ballSpeedY = 5;
 let ballPosX = gameContainer.clientWidth / 2;
 let ballPosY = gameContainer.clientHeight / 2;
 
@@ -66,12 +67,32 @@ function movePlayers() {
     player2.style.top = `${player2PosY}px`;
 }
 
+// Ставим игру на паузу
+// Setter spillet til pause
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        pauseGame();
+    }
+})
+
+document.addEventListener("keyup", (event) => {
+    
+})
+
+function pauseGame() {
+   pause = !pause;
+}
+
 // Обновление движений через requestAnimationFrame
 // Oppdatere bevegelser via requestAnimationFrame
 
 function updateGame() {
-    moveBall(); // Проверяем движение мяча // Kontrollere ballens bevegelse
-    movePlayers(); // Проверяем движения игроков // Sjekke bevegelsene til spillerne
+    if (!pause ){
+        moveBall(); // Проверяем движение мяча // Kontrollere ballens bevegelse
+        movePlayers(); // Проверяем движения игроков // Sjekke bevegelsene til spillerne
+    }
+    
     requestAnimationFrame(updateGame); // Рекурсивно вызываем обновление // Kall oppdateringen rekursivt
 }
 
@@ -120,6 +141,11 @@ function moveBall() {
         updateScore();
         checkWinner();
         resetBall();
+    }
+
+    if (player1Score === maxScore || player2Score === maxScore) {
+        isGameRunning = false;
+        showWinner(player1Score > player2Score ? "Player 1" : "Player 2");
     }
 
     ball.style.left = `${ballPosX}px`;
