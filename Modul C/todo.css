@@ -1,0 +1,115 @@
+
+:root{
+    --myBluishColor: rgb(149, 217, 148);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: rgb(37, 121, 54);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+
+header h1{
+    padding: 20px 0;
+    margin: 0;
+}
+
+#task-form{
+    margin-top: 10px;
+    text-align: center;
+}
+
+#user-input{
+    padding: 8px;
+    border: 1px solid #f31616;
+    border-radius: 5px;
+}
+
+#user-input:focus{
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#list-container{
+    padding: 20px;
+    margin: 0px auto;
+}
+
+.taks-container{
+    display: flex;
+    align-items: center;
+    background-color: azure;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.description{
+    flex: 1; /* Занимает всю ширину */ /* Allow growing */
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--myBluishColor) ;
+}
+
+.description:not([readonly]){
+    border: 2px solid rgb(124, 198, 184) ;
+}
+
+.checked{
+    text-decoration: line-through;
+    color: lightgray;
+}
+
+.checkedbg{
+    background-color: gray;
+}
+
+.edit-button{
+    border-radius: 10px;
+    margin-right: 5px;
+    background-color: blueviolet;
+}
+
+.delete-button{
+    border-radius: 10px;
+    margin-left: 5px;
+    background-color: rgb(240, 174, 174);
+
+}
+
+.completed-checkbox{
+    /* appearance: none; */
+    width: 20px;
+    height: 20px;
+    border: 2px solid #397e2e;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin-right: 10px;
+
+}
+
+.completed-checkbox:checked{
+    background-color: var(--myBluishColor);
+  
+}
+
+
