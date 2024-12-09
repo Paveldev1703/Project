@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2c3e50;
+}
+
+#drum-kit {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    gap: 20px;
+}
+
+.drum {
+    width: 150px;
+    height: 150px;
+    background-color: #34495e;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.drum:active,
+.drum.active {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+#clap {
+    background-image: url("./IMG/clap.png");
+}
+
+#hihat {
+    background-image: url("./IMG/hihat.png");
+}
+
+#kick {
+    background-image: url("./IMG/kick.jpg");
+}
+
+#openhat {
+    background-image: url("./IMG/openhat.png");
+}
+
+#ride {
+    background-image: url("./IMG/ride.jpg");
+}
+
+#snare {
+    background-image: url("./IMG/snare.png");
+}
+
+#tink {
+    background-image: url("./IMG/tink.png");
+}
+
+#tom {
+    background-image: url("./IMG/tom.png");
+}
