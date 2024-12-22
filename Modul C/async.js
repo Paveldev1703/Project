@@ -132,7 +132,7 @@ async function getBook(id) {
     try{
         // const result = await fetch(`${apiEndpoint}/${id}`);
         const result = await fetch(`${apiEndpoint}/${id}`);
-        const data = await result.json();
+        const data = await result.json(); // jso metoden konverterer JSON til JS Objekt.
         renderSite(data);
     } catch (error) {
         console.log(error);
@@ -140,7 +140,13 @@ async function getBook(id) {
 }
 
 function renderSite(data) {
+    minDiv = document.getElementById("div");
+    minDiv.textContent = data.title;
+    
     console.log(data);
 }
+
+
+
 
 getBook(1);

@@ -1,50 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Block</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Smooth Scrolling Website</title>
 </head>
 <body>
-  <section class="hero">
-    <div class="container">
-      <header class="logo">
-        <h1>DVLPR</h1>
-      </header>
-      <div class="content">
-        <h2>Front-End Software Developer</h2>
-        <p>Resolving design problems, building smart user interfaces and useful interactions, developing rich web applications and seamless web experiences.</p>
-        <a href="#about" class="about-link">About me</a>
-      </div>
-      <div class="illustration">
-        <img src="illustration.svg" alt="Isometric illustration of a developer's desk" />
-      </div>
-      <a href="#contact" class="contact-btn">Contact</a>
-    </div>
-
-
-
-    <div class="scroll-indicator">
+    <nav id="side-menu">
         <ul>
-          <li data-index="1" class="active">01</li>
-          <li data-index="2">02</li>
-          <li data-index="3">03</li>
-          <li data-index="4">04</li>
+            <li data-section="0" class="active">Section 0</li>
+            <li data-section="1">Section 1</li>
+            <li data-section="2">Section 2</li>
+            <li data-section="3">Section 3</li>
+            <li data-section="4">Section 4</li>
         </ul>
-      </div>
-    
-      <section id="section1" class="section">Section 1</section>
-      <section id="section2" class="section">Section 2</section>
-      <section id="section3" class="section">Section 3</section>
-      <section id="section4" class="section">Section 4</section>
+    </nav>
 
-
-      
-    <div class="scroll-indicator">
-      <p>Scroll Down</p>
-      <span>&#9660;</span>
+    <div id="sections">
+        <section id="section0">Section 0 Content</section>
+        <section id="section1">Section 1 Content</section>
+        <section id="section2">Section 2 Content</section>
+        <section id="section3">Section 3 Content</section>
+        <section id="section4">Section 4 Content</section>
     </div>
-  </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
