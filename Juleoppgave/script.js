@@ -1,19 +1,19 @@
 // script.js
 
-// Контейнер для календаря
+// Kalender beholder
 const calendarGrid = document.getElementById('calendar-grid');
 const messageBox = document.getElementById('message-box');
 const messageText = document.getElementById('message');
 const closeMessageButton = document.getElementById('close-message');
 const resetButton = document.getElementById('reset-button');
 
-// API для получения рождественских шуток
+// API for å få julevitser
 const jokeAPI = 'https://v2.jokeapi.dev/joke/Christmas?type=single';
 
-// Хранилище открытых дат
+// Åpne datolager
 const openedDates = new Set();
 
-// Создание сетки календаря
+// Opprette et kalenderrutenett
 for (let i = 1; i <= 24; i++) {
   const cell = document.createElement('div');
   cell.classList.add('calendar-cell');
@@ -24,14 +24,14 @@ for (let i = 1; i <= 24; i++) {
   calendarGrid.appendChild(cell);
 }
 
-// Обработка клика по дате
+// Behandling av datoklikk
 async function handleDateClick(date, cell) {
   if (openedDates.has(date)) {
     showMessage(`День ${date} уже открыт!`);
     return;
   }
 
-  // Получение шутки из API
+  // Få en vits fra API-en
   try {
     const response = await fetch(jokeAPI);
     const data = await response.json();
@@ -44,18 +44,18 @@ async function handleDateClick(date, cell) {
   }
 }
 
-// Показ сообщения
+// Vise en melding
 function showMessage(text) {
   messageText.textContent = text;
   messageBox.style.display = 'block';
 }
 
-// Закрытие сообщения
+// Lukke en melding
 closeMessageButton.addEventListener('click', () => {
   messageBox.style.display = 'none';
 });
 
-// Сброс календаря
+// Tilbakestill kalenderen
 resetButton.addEventListener('click', () => {
   const cells = document.querySelectorAll('.calendar-cell');
   cells.forEach(cell => cell.classList.remove('opened'));
