@@ -1,4 +1,3 @@
-// script.js
 
 // Kalender beholder
 const calendarGrid = document.getElementById('calendar-grid');
@@ -27,7 +26,7 @@ for (let i = 1; i <= 24; i++) {
 // Behandling av datoklikk
 async function handleDateClick(date, cell) {
   if (openedDates.has(date)) {
-    showMessage(`День ${date} уже открыт!`);
+    showMessage(`Dag ${date} allerede åpen!`);
     return;
   }
 
@@ -35,12 +34,12 @@ async function handleDateClick(date, cell) {
   try {
     const response = await fetch(jokeAPI);
     const data = await response.json();
-    const joke = data.joke || 'Весёлых праздников!';
+    const joke = data.joke || 'Ha ei Fin Førjulstid!';
     showMessage(joke);
     cell.classList.add('opened');
     openedDates.add(date);
   } catch (error) {
-    showMessage('Не удалось загрузить шутку. Попробуйте позже.');
+    showMessage('Vitsen kunne ikke lades. Prøv igjen senere.');
   }
 }
 
@@ -60,5 +59,5 @@ resetButton.addEventListener('click', () => {
   const cells = document.querySelectorAll('.calendar-cell');
   cells.forEach(cell => cell.classList.remove('opened'));
   openedDates.clear();
-  showMessage('Календарь сброшен!');
+  showMessage('Tilbakestilling av kalender!');
 });
