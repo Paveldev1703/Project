@@ -1,5 +1,5 @@
 import React from "react";
-import meny from "./dish";
+import { meny } from "./dish";
 
 
 export default function KafeMenu() {
