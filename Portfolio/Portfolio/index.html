@@ -29,15 +29,15 @@
 
         <!-- Menu -->
         <div class="menu-container">
-            <button class="menu-button" id="menu-button">Menu</button>
-            <div class="dropdown" id="dropdown">
+              <div class="navigation">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#peach">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                  <li data-target="hero-content" class="active">00</li>
+                  <li data-target="peach">01</li>
+                  <li data-target="skills">02</li>
+                  <li data-target="testimonials">03</li>
+                  <li data-target="contact">04</li>
                 </ul>
-            </div>
+              </div>
         </div>
         
         <div class="hero_content" id="hero-content">
@@ -97,25 +97,26 @@
 
         <!-- Section 2: Peach -->
         <section id="peach" class="peach">
-            <div class="image-content">
-                <img src="img/pexels-adrien-olichon-1257089-2387793.jpg" alt="Web Development Illustration">
-            </div>
-        
-            <div class="peach-text">
+            <div class="content">
+              <div class="peach-text">
                 <h1>
-                    Hi, my name is <span class="highlight">Pavel</span><br>
-                    <span class="highlight">I'm a Web Developer</span>
+                  Hi, my name is <span class="highlight">Pavel</span><br />
+                  <span class="highlight">I'm a Web Developer</span>
                 </h1>
                 <p class="subtext">Front-End Developer / Web Designer</p>
-            </div>
-        
-            <div class="main-peach-text">
-                <p>For 2 years, I immersed myself in the world of web development, creating modern and
-                    aesthetically minimalist interfaces. I work with tools like HTML, CSS, JavaScript, and Figma,
-                    and I strive to turn ideas into lively, interactive projects.
+              </div>
+          
+              <div class="main-peach-text">
+                <p>
+                  For 2 years, I immersed myself in the world of web development,
+                  creating modern and aesthetically minimalist interfaces. I work with
+                  tools like HTML, CSS, JavaScript, and Figma, and I strive to turn ideas
+                  into lively, interactive projects.
                 </p>
+              </div>
             </div>
-        </section>
+          </section>
+          
         
 
         <!-- Section 3: Skills and Expirience -->
@@ -147,7 +148,7 @@
 
 
     <!-- Section 4: Testimonials -->
-    <section class="testimonials">
+    <section id="testimonials" class="testimonials">
         <h2 class="fade-in">What Our Clients Say</h2>
         <div class="testimonial-cards">
             <div class="card fade-in">
@@ -165,8 +166,8 @@
         </div>
     </section>
 
-    <!-- Section 5: Before and After -->
-<section class="beforeafter">
+    <!-- Section 5: Before and After
+<section id="before_after" class="beforeafter">
     <div class="before-after-section">
         <h1 class="beforafter-text">Before and After</h1>
         <div class="comparison-row">
@@ -211,7 +212,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- Section Registration-->
 

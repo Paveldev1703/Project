@@ -1,79 +1,3 @@
-document.querySelectorAll('.comparison-container').forEach(container => {
-    const slider = container.querySelector('.slider');
-    const afterImage = container.querySelector('.comparison-image.after');
-
-    const updateSlider = (event) => {
-        const containerRect = container.getBoundingClientRect();
-        const x = event.clientX - containerRect.left; 
-        const percentage = Math.min(Math.max(x / containerRect.width, 0), 1); 
-        
-        slider.style.left = `${percentage * 100}%`; // Положение слайдера
-        afterImage.style.clipPath = `inset(0 ${100 - percentage * 100}% 0 0)`; // Обновление clip-path
-    };
-
-    container.addEventListener('mousemove', updateSlider);
-    container.addEventListener('touchmove', updateSlider); // Для мобильных устройств
-
-    // Опционально: обработка события для начала перетаскивания слайдера
-    slider.addEventListener('mousedown', (event) => {
-        event.preventDefault(); // предотвращаем выделение текста
-        const onMouseMove = (e) => {
-            updateSlider(e);
-        };
-
-        const onMouseUp = () => {
-            document.removeEventListener('mousemove', onMouseMove);
-            document.removeEventListener('mouseup', onMouseUp);
-        };
-
-        document.addEventListener('mousemove', onMouseMove);
-        document.addEventListener('mouseup', onMouseUp);
-    });
-
-    slider.addEventListener('touchstart', (event) => {
-        event.preventDefault();
-        updateSlider(event.touches[0]);
-        const onTouchMove = (e) => {
-            updateSlider(e.touches[0]);
-        };
-
-        const onTouchEnd = () => {
-            document.removeEventListener('touchmove', onTouchMove);
-            document.removeEventListener('touchend', onTouchEnd);
-        };
-
-        document.addEventListener('touchmove', onTouchMove);
-        document.addEventListener('touchend', onTouchEnd);
-    });
-});
-
-//Menu
-document.getElementById("menu-button").addEventListener("click", function() {
-    const dropdown = document.getElementById("dropdown");
-    // Проверяем, скрыто ли выпадающее меню
-    if (dropdown.style.display === "block") {
-        dropdown.style.display = "none"; // Скрываем меню
-    } else {
-        dropdown.style.display = "block"; // Показываем меню
-    }
-});
-
-// Закрываем меню при клике вне его
-window.onclick = function(event) {
-    if (!event.target.matches('.menu-button')) {
-        const dropdown = document.getElementById("dropdown");
-        if (dropdown.style.display === "block") {
-            dropdown.style.display = "none"; // Скрываем меню
-        }
-    }
-}
-
-// Открытие и закрытие меню при нажатии на кнопку
-document.getElementById("menu-button").addEventListener("click", function() {
-    const menu = document.getElementById("menu-container");
-    menu.classList.toggle("active"); // Переключение класса для показа меню
-});
-
 
 // Scroll Text 
 // Отслеживание прокрутки
@@ -87,3 +11,186 @@ window.addEventListener("scroll", function () {
         heroContent.classList.remove("hidden"); // Убираем класс, чтобы вернуть текст
     }
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll(".navigation li");
+  
+    // Scroll to section when clicking a nav item
+    navItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        const targetId = item.getAttribute("data-target");
+        const targetSection = document.getElementById(targetId);
+  
+        // Scroll to the section
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      });
+    });
+  
+    // Update active nav item on scroll
+    window.addEventListener("scroll", () => {
+      let currentSection = "";
+  
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - section.offsetHeight / 2) {
+          currentSection = section.getAttribute("id");
+        }
+      });
+  
+      navItems.forEach((item) => {
+        item.classList.remove("active");
+        if (item.getAttribute("data-target") === currentSection) {
+          item.classList.add("active");
+        }
+      });
+    });
+  });
+
+
+// Scroll
+
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll(".navigation li");
+  
+    // Scroll to section when clicking a nav item
+    navItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        const targetId = item.getAttribute("data-target");
+        const targetSection = document.getElementById(targetId);
+  
+        // Scroll to the section
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      });
+    });
+  
+    // Update active nav item on scroll
+    window.addEventListener("scroll", () => {
+      let currentSection = "";
+  
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - section.offsetHeight / 2) {
+          currentSection = section.getAttribute("id");
+        }
+      });
+  
+      navItems.forEach((item) => {
+        item.classList.remove("active");
+        if (item.getAttribute("data-target") === currentSection) {
+          item.classList.add("active");
+        }
+      });
+    });
+  });
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+    let currentSectionIndex = 0;
+  
+    const scrollToSection = (index) => {
+      if (index < 0 || index >= sections.length) return;
+  
+      sections[index].scrollIntoView({
+        behavior: "smooth",
+      });
+      currentSectionIndex = index;
+    };
+  
+    // Обработка колеса мыши
+    let isScrolling = false;
+    window.addEventListener("wheel", (event) => {
+      if (isScrolling) return;
+  
+      isScrolling = true;
+      if (event.deltaY > 0) {
+        scrollToSection(currentSectionIndex + 1); // Скролл вниз
+      } else {
+        scrollToSection(currentSectionIndex - 1); // Скролл вверх
+      }
+  
+      setTimeout(() => {
+        isScrolling = false;
+      }, 1000); // Пауза между скроллами
+    });
+  
+    // Обработка стрелок на клавиатуре
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowDown") {
+        scrollToSection(currentSectionIndex + 1);
+      } else if (event.key === "ArrowUp") {
+        scrollToSection(currentSectionIndex - 1);
+      }
+    });
+  });
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll(".navigation li");
+  
+    let currentSectionIndex = 0;
+  
+    // Функция для перехода к секции
+    const scrollToSection = (index) => {
+      if (index < 0 || index >= sections.length) return;
+  
+      sections[index].scrollIntoView({
+        behavior: "smooth",
+      });
+      setActiveNav(index);
+      currentSectionIndex = index;
+    };
+  
+    // Функция для обновления активного навигационного элемента
+    const setActiveNav = (index) => {
+      navItems.forEach((item, i) => {
+        item.classList.toggle("active", i === index);
+      });
+    };
+  
+    // Обработчик для кликов на элементы навигации
+    navItems.forEach((item, index) => {
+      item.addEventListener("click", () => {
+        scrollToSection(index);
+      });
+    });
+  
+    // Обработчик скроллинга
+    let isScrolling = false;
+    window.addEventListener("scroll", () => {
+      if (isScrolling) return;
+  
+      isScrolling = true;
+      setTimeout(() => {
+        isScrolling = false;
+  
+        const scrollPosition = window.scrollY;
+        sections.forEach((section, index) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+  
+          if (
+            scrollPosition >= sectionTop - sectionHeight / 2 &&
+            scrollPosition < sectionTop + sectionHeight / 2
+          ) {
+            setActiveNav(index);
+            currentSectionIndex = index;
+          }
+        });
+      }, 100);
+    });
+  
+    // Установить "00" активным при загрузке страницы
+    setActiveNav(0);
+  
+    // Возвращение на главную секцию при нажатии на "00"
+    navItems[0].addEventListener("click", () => {
+      scrollToSection(0);
+    });
+  });
+  
+  

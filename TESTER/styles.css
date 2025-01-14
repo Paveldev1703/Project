@@ -1,55 +1,56 @@
-/* Общие стили */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  overflow: hidden;
-}
-
-/* Секции */
-section {
+  margin: 0;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  transition: background-color 0.3s;
+  overflow-y: scroll; /* Вертикальная прокрутка */
+  scroll-behavior: smooth; /* Плавная прокрутка */
 }
 
-/* Чередование цветов */
-#section0 { background-color: #8ecae6; }
-#section1 { background-color: #219ebc; color: #fff; }
-#section2 { background-color: #023047; color: #fff; }
-#section3 { background-color: #ffb703; }
-#section4 { background-color: #fb8500; }
-
-/* Меню навигации */
-#side-menu {
+.navigation {
   position: fixed;
   top: 50%;
-  right: 20px;
+  left: 20px;
   transform: translateY(-50%);
-  z-index: 10;
 }
 
-#side-menu ul {
+.navigation ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-#side-menu li {
+.navigation li {
   margin: 10px 0;
-  padding: 10px;
+  font-size: 14px;
+  color: #666;
   cursor: pointer;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  background-color: #fff;
   text-align: center;
-  transition: background-color 0.3s, color 0.3s;
+  transition: color 0.3s;
 }
 
-#side-menu li.active {
-  background-color: #023047;
-  color: #fff;
+.navigation li.active {
+  color: rgb(0, 0, 0);
   font-weight: bold;
+}
+
+.content {
+  margin-left: 60px; /* To leave space for the navigation */
+  scroll-snap-type: y mandatory; /* Активируем привязку для вертикального скролла */
+}
+
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background: #222;
+  color: white;
+  border-bottom: 1px solid #444;
+}
+
+section:nth-child(odd) {
+  background: #333;
 }
