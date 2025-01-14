@@ -66,24 +66,35 @@ section {
 }
 
 /* Menu section*/
+.menu-container{
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1;
+}
+
+
 .navigation {
     position: fixed;
     top: 50%;
-    right: 40px;
+    right: 35px;
     transform: translateY(-50%);
-    z-index: 1;
-   
+    
   }
   
-  .navigation ul {
+.navigation ul {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
+}
   
   .navigation li {
-    margin: 10px 0;
-    font-size: 14px;
+    margin: 5px 0;
+    font-size: 16px;
     color: #ffffff;
     cursor: pointer;
     text-align: center;
@@ -101,8 +112,34 @@ section {
     scroll-snap-type: y mandatory; /* Активируем привязку для вертикального скролла */
   }
 
+/* Slider */
+.vertical-slider {
+    width: 5px;
+    height: 150px;
+    background: #555;
+    position: relative;
+    margin-right: 20px;
+    border-radius: 5px;
+  }
+  
+  .slider-indicator {
+    width: 100%;
+    height: 20%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 5px;
+    transition: top 0.3s ease;
+  }
 
 /* CONTACT SECTION */
+  .social-icons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 15px;
+  }
 
   .wrapper {
     display: inline-flex;
@@ -187,7 +224,7 @@ section {
     left: 50%;       
     transform: translate(-50%, -50%); 
     opacity: 1; 
-    transition: transform 1.5s ease, opacity 1.5s ease; 
+    transition: transform 1s ease, opacity 1s ease; 
   }
   
   .hero_content.hidden {

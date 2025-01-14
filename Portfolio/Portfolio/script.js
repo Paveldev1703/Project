@@ -16,93 +16,61 @@ window.addEventListener("scroll", function () {
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
     const navItems = document.querySelectorAll(".navigation li");
+    const sliderIndicator = document.querySelector(".slider-indicator");
   
-    // Scroll to section when clicking a nav item
-    navItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        const targetId = item.getAttribute("data-target");
-        const targetSection = document.getElementById(targetId);
-  
-        // Scroll to the section
-        targetSection.scrollIntoView({ behavior: "smooth" });
-      });
-    });
-  
-    // Update active nav item on scroll
-    window.addEventListener("scroll", () => {
-      let currentSection = "";
-  
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - section.offsetHeight / 2) {
-          currentSection = section.getAttribute("id");
-        }
-      });
-  
-      navItems.forEach((item) => {
-        item.classList.remove("active");
-        if (item.getAttribute("data-target") === currentSection) {
-          item.classList.add("active");
-        }
-      });
-    });
-  });
-
-
-// Scroll
-
-document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section");
-    const navItems = document.querySelectorAll(".navigation li");
-  
-    // Scroll to section when clicking a nav item
-    navItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        const targetId = item.getAttribute("data-target");
-        const targetSection = document.getElementById(targetId);
-  
-        // Scroll to the section
-        targetSection.scrollIntoView({ behavior: "smooth" });
-      });
-    });
-  
-    // Update active nav item on scroll
-    window.addEventListener("scroll", () => {
-      let currentSection = "";
-  
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - section.offsetHeight / 2) {
-          currentSection = section.getAttribute("id");
-        }
-      });
-  
-      navItems.forEach((item) => {
-        item.classList.remove("active");
-        if (item.getAttribute("data-target") === currentSection) {
-          item.classList.add("active");
-        }
-      });
-    });
-  });
-
-
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section");
     let currentSectionIndex = 0;
+    let isScrolling = false;
   
+    // Функция для перехода к секции
     const scrollToSection = (index) => {
       if (index < 0 || index >= sections.length) return;
   
       sections[index].scrollIntoView({
         behavior: "smooth",
       });
+      updateActiveNav(index);
       currentSectionIndex = index;
     };
   
-    // Обработка колеса мыши
-    let isScrolling = false;
+    // Обновление активного элемента навигации и индикатора
+    const updateActiveNav = (index) => {
+      navItems.forEach((item, i) => {
+        item.classList.toggle("active", i === index);
+      });
+  
+      // Двигаем индикатор ползунка
+      const indicatorHeight = 100 / sections.length;
+      sliderIndicator.style.top = `${index * indicatorHeight}%`;
+    };
+  
+    // Обновление текущей секции при скролле
+    const updateCurrentSection = () => {
+      const scrollPosition = window.scrollY;
+  
+      sections.forEach((section, index) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+  
+        if (
+          scrollPosition >= sectionTop - sectionHeight / 2 &&
+          scrollPosition < sectionTop + sectionHeight / 2
+        ) {
+          if (currentSectionIndex !== index) {
+            updateActiveNav(index);
+            currentSectionIndex = index;
+          }
+        }
+      });
+    };
+  
+    // Навигация: клики по пунктам
+    navItems.forEach((item, index) => {
+      item.addEventListener("click", () => {
+        scrollToSection(index);
+      });
+    });
+  
+    // Скролл колесом мыши
     window.addEventListener("wheel", (event) => {
       if (isScrolling) return;
   
@@ -115,10 +83,10 @@ document.addEventListener("DOMContentLoaded", () => {
   
       setTimeout(() => {
         isScrolling = false;
-      }, 1000); // Пауза между скроллами
+      }, 1000);
     });
   
-    // Обработка стрелок на клавиатуре
+    // Скролл клавишами
     window.addEventListener("keydown", (event) => {
       if (event.key === "ArrowDown") {
         scrollToSection(currentSectionIndex + 1);
@@ -126,71 +94,15 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollToSection(currentSectionIndex - 1);
       }
     });
-  });
   
-  document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section");
-    const navItems = document.querySelectorAll(".navigation li");
-  
-    let currentSectionIndex = 0;
-  
-    // Функция для перехода к секции
-    const scrollToSection = (index) => {
-      if (index < 0 || index >= sections.length) return;
-  
-      sections[index].scrollIntoView({
-        behavior: "smooth",
-      });
-      setActiveNav(index);
-      currentSectionIndex = index;
-    };
-  
-    // Функция для обновления активного навигационного элемента
-    const setActiveNav = (index) => {
-      navItems.forEach((item, i) => {
-        item.classList.toggle("active", i === index);
-      });
-    };
-  
-    // Обработчик для кликов на элементы навигации
-    navItems.forEach((item, index) => {
-      item.addEventListener("click", () => {
-        scrollToSection(index);
-      });
-    });
-  
-    // Обработчик скроллинга
-    let isScrolling = false;
+    // Скролл для обновления активного элемента
     window.addEventListener("scroll", () => {
-      if (isScrolling) return;
-  
-      isScrolling = true;
-      setTimeout(() => {
-        isScrolling = false;
-  
-        const scrollPosition = window.scrollY;
-        sections.forEach((section, index) => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-  
-          if (
-            scrollPosition >= sectionTop - sectionHeight / 2 &&
-            scrollPosition < sectionTop + sectionHeight / 2
-          ) {
-            setActiveNav(index);
-            currentSectionIndex = index;
-          }
-        });
-      }, 100);
+      if (!isScrolling) {
+        updateCurrentSection();
+      }
     });
   
-    // Установить "00" активным при загрузке страницы
-    setActiveNav(0);
-  
-    // Возвращение на главную секцию при нажатии на "00"
-    navItems[0].addEventListener("click", () => {
-      scrollToSection(0);
-    });
+    // Инициализация: активируем первый пункт навигации и индикатор
+    updateActiveNav(0);
   });
-  
   
