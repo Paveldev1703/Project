@@ -6,6 +6,20 @@
     box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+  
+    .navigation {
+      flex-direction: column; /* Переводим навигацию в вертикальный вид */
+    }
+  
+    .section {
+      padding: 10px;
+    }
+  }
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #121212;
@@ -236,7 +250,7 @@ section {
 .peach {
     width: 100%;
     height: 100vh;
-    background: url('./img/pexels-adrien-olichon-1257089-2387793.jpg') no-repeat center center / cover;
+    background: url('./img/beforeafter.jpg') no-repeat center center / cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -605,77 +619,97 @@ section {
 /* Registration */
 
 .registration {
-    background: url('img/registration.jpg') no-repeat center center/cover;
-}
-
-.registration-container {
-    background-color: #d3d3d3; /* Белый фон для формы */
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень */
-    height: 710px;
-    padding: 30px; /* Внутренние отступы */
-    width: 400px; /* Ширина контейнера */
-    text-align: center; /* Выравнивание текста по центру */
-}
-
-h1 {
-    margin-bottom: 20px; /* Отступ снизу */
-    color: #333; /* Цвет заголовка */
-}
-
-.input-group {
-    margin-bottom: 20px; /* Отступ снизу для группировки */
-}
-
-label {
-    display: block; /* Блочный элемент */
-    margin-bottom: 5px; /* Отступ снизу для метки */
-    color: #555; /* Цвет метки */
-}
-
-input {
-    width: 100%; /* Полная ширина */
-    padding: 10px; /* Внутренние отступы */
-    border: 1px solid #ddd; /* Цвет границы */
-    border-radius: 4px; /* Скругление углов */
-    font-size: 16px; /* Размер шрифта */
-    transition: border-color 0.3s; /* Плавный переход для изменения цвета границы */
-}
-
-input:focus {
-    border-color: #007bff; /* Цвет границы при фокусировке */
-    outline: none; /* Убираем стандартный обвод */
-}
-
-.register-btn {
-    background-color: #007bff; /* Цвет кнопки */
-    color: white; /* Цвет текста кнопки */
-    border: none; /* Убираем границу */
-    padding: 10px 15px; /* Внутренние отступы */
-    border-radius: 4px; /* Скругление углов */
-    margin-top: -10px;
-    font-size: 16px; /* Размер шрифта */
-    cursor: pointer; /* Курсор в виде руки */
-    transition: background-color 0.3s; /* Плавный переход для изменения цвета фона */
-}
-
-.register-btn:hover {
-    background-color: #0056b3; /* Цвет кнопки при наведении */
-}
-
-.login-redirect {
-
-    margin-top: 0px; /* Отступ сверху */
-    color: #777; /* Цвет текста */
-}
-
-.login-redirect a {
-    color: #007bff; /* Цвет ссылки */
-    text-decoration: none; /* Убираем подчеркивание */
-}
-
-.login-redirect a:hover {
-    text-decoration: underline; /* Подчеркивание при наведении */
-}
-
-
+    background: url('./img/mauntains2.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+  }
+  
+  .registration-container {
+    background: rgba(255, 255, 255, 0.1); /* Прозрачный белый фон */
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px; /* Скругленные углы */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Тень для глубины */
+    backdrop-filter: blur(10px); /* Эффект размытия заднего фона */
+    text-align: center;
+    color: white;
+  }
+  
+  /* Заголовок */
+  .registration-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Группы ввода */
+  .input-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .input-group input:focus {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Кнопка регистрации */
+  .register-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 123, 255, 0.8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register-btn:hover {
+    background-color: rgba(0, 123, 255, 1);
+  }
+  
+  /* Перенаправление на вход */
+  .login-redirect {
+    margin-top: 15px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .login-redirect a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .login-redirect a:hover {
+    color: #0056b3;
+  }
