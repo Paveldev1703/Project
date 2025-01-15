@@ -4,7 +4,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth; /* Плавная прокрутка на всей странице */
 }
+
 
 @media (max-width: 768px) {
     body {
@@ -65,6 +67,42 @@ section {
     transform: scale(1.05);
 }
 
+
+/* Logo */
+
+.logo {
+  /* background-image: url("./img/mauntains2.jpg"); */
+  position: fixed;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font: bold;
+  z-index: 1;
+  top: 30px;
+  left: 50px;
+}
+
+.logo h1 {
+  display: flex;
+  gap: 20px;
+}
+
+.logo a{
+  text-decoration: none;
+}
+
+.logo span {
+  display: inline-block; /* Позволяет каждой букве иметь собственное пространство */
+  font-size: 2rem; /* Размер букв */
+  margin-right: -7px;
+  color: #fff; /* Основной цвет текста */
+  transition: transform 0.3s ease, color 0.3s ease; /* Плавный переход для цвета и подпрыгивания */
+  cursor: pointer; /* Указывает, что на элемент можно кликать */
+}
+
+/* Эффект при наведении */
+.logo span:hover {
+  transform: translateY(-10px); /* Поднимает букву вверх на 10px */
+  color: #fcb832; /* Изменяет цвет при наведении */
+}
 
 /*GitHub Icon*/
 .github-icon {
@@ -213,7 +251,7 @@ section {
 
 /* Hero Section */
 .hero {
-    background: url('img/hero.jpg') no-repeat center center/cover;
+    background: url('./img/hero.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -226,10 +264,27 @@ section {
     text-align: center;
 }
 
+/* Latter style */
+.hero_content span {
+  display: inline-block; /* Позволяет каждой букве иметь собственное пространство */
+  font-size: 5rem; /* Размер букв */
+  margin-right: -15px;
+  color: #fff; /* Основной цвет текста */
+  transition: transform 0.3s ease, color 0.3s ease; /* Плавный переход для цвета и подпрыгивания */
+  cursor: pointer; /* Указывает, что на элемент можно кликать */
+}
+
+/* Эффект при наведении */
+.hero_content span:hover {
+  transform: translateY(-10px); /* Поднимает букву вверх на 10px */
+  color: #fcb832; /* Изменяет цвет при наведении */
+}
+
+/* Стиль для текста под заголовком */
 .hero_content p {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-top: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .hero_content {
@@ -284,7 +339,7 @@ section {
   }
   
   .highlight {
-    color: #ff0077;
+    color: #fcb832;
     cursor: pointer;
     transition: transform 0.3s, color 0.3s ease-in-out;
   }
@@ -373,7 +428,7 @@ h2 {
 }
 
 .linkedin-link {
-    color: #ff0077;
+    color: #fcb832;
     text-decoration: none;
     transition: color 0.3s;
 }
