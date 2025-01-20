@@ -63,7 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     };
   
-    // Навигация: клики по пунктам
+
+    // NavBar: клики по пунктам
     navItems.forEach((item, index) => {
       item.addEventListener("click", () => {
         scrollToSection(index);
@@ -106,3 +107,45 @@ document.addEventListener("DOMContentLoaded", () => {
     updateActiveNav(0);
   });
   
+
+
+
+
+
+// Project cards animation
+const cards = document.querySelectorAll('.card');
+
+// Настраиваем Intersection Observer
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible'); // Добавляем класс, если элемент виден
+            } else {
+                entry.target.classList.remove('visible'); // Убираем класс, если элемент уходит
+            }
+        });
+    },
+    {
+        threshold: 0.2, // 20% элемента должно быть видно для срабатывания
+    }
+);
+
+// Применяем наблюдатель ко всем карточкам
+cards.forEach((card) => {
+    observer.observe(card);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+

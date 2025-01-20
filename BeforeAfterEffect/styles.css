@@ -1,0 +1,88 @@
+/* Before-After Section */
+
+.beforafter-text {
+    font-size: 40px; /* Размер шрифта */
+    color: white; /* Цвет текста */
+    text-shadow: 
+        -1px -1px 0px black,  
+        1px -1px 0px black,
+        -1px 1px 0px black,
+        1px 1px 0px black; /* Обводка текста */
+}
+
+
+
+
+.beforeafter {
+    background: url('img/beforeafter.jpg') no-repeat center center/cover;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.before-after-section {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Flex container for comparison blocks */
+.comparison-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+    justify-content: center; /* Center items */
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Container for each comparison block */
+.comparison-container {
+    position: relative;
+    width: 500px;  /* Adjust width */
+    height: 300px; /* Adjust height */
+    overflow: hidden;
+    border: 2px solid #ffffff; /* Border color for visibility */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+    margin: 20px; /* Added margin for spacing */
+}
+
+/* Images in the container */
+.comparison-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Before Image */
+.comparison-image.before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* After Image with immediate clip-path */
+.comparison-image.after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    clip-path: inset(0 50% 0 0); /* Initially show half */
+}
+
+/* Slider */
+.slider {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Centered by default */
+    width: 4px;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 3;
+    cursor: ew-resize;
+}
+
+.slider:hover {
+    background-color: #ff1a1a; /* Change color on hover */
+}

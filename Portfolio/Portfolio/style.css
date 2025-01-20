@@ -59,6 +59,8 @@ body {
 
 
 
+
+
 /* Common Section Styling */
 section {
     height: 100vh;
@@ -91,10 +93,20 @@ section {
 }
 
 
+
+
+
+
 /* Logo */
 
 .logo {
-  /* background-image: url("./img/mauntains2.jpg"); */
+  color: #fff;
+  text-shadow: 1px 1px 0 #ccc,
+               2px 2px 0 #bbb,
+               3px 3px 0 #aaa,
+               4px 4px 0 #999,
+               5px 5px 5px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
   position: fixed;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font: bold;
@@ -126,6 +138,8 @@ section {
   transform: translateY(-10px); /* Поднимает букву вверх на 10px */
   color: #fcb832; /* Изменяет цвет при наведении */
 }
+
+
 
 /*GitHub Icon*/
 .github-icon {
@@ -160,7 +174,7 @@ section {
 }
 
 .github-icon:hover {
-  background: #8b5656; /* Черный фон при наведении */
+  background: #000000; /* Черный фон при наведении */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Легкая тень */
   transform: scale(1.2); /*Увеличиваем значок */
 }
@@ -168,7 +182,10 @@ section {
 
 
 
-/* Menu section*/
+
+
+
+/* Menu section / navbar */
 .menu-container{
     position: fixed;
     top: 50%;
@@ -215,7 +232,7 @@ section {
     scroll-snap-type: y mandatory; /* Активируем привязку для вертикального скролла */
   }
 
-/* Slider */
+/* Slider in nav bar */
 .vertical-slider {
     width: 5px;
     height: 150px;
@@ -237,10 +254,11 @@ section {
   }
 
 
-/* Button */
+/* Contact button */
 
 .contact-button {
   position: fixed;
+  font-family: 'Poppins', sans-serif;
   z-index: 1;
   top: 0;
   right: 0;
@@ -270,7 +288,9 @@ section {
 
 
 
-/* CONTACT SECTION */
+
+
+/* Social icons  */
   .social-icons {
     position: fixed;
     z-index: 1;
@@ -281,9 +301,11 @@ section {
   .wrapper {
     display: table-row;
     list-style: none;
+    text-decoration: none;
     position: absolute;
     top: 10px;
     right: 20px;
+    
   }
   
   .wrapper .icon {
@@ -299,23 +321,13 @@ section {
     transition: all 0.3s ease;
   }
   
-  .wrapper .tooltip {
-    position: absolute;
-    top: -35px;
-    background: #000;
-    padding: 5px 10px;
-    border-radius: 5px;
+  .wrapper .icon a {
+    text-decoration: none;
     color: #fff;
-    font-size: 14px;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s;
+    font-size: 25px;
+    margin-top: 10px;
   }
-  
-  .wrapper .icon:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-  }
+
   
   .wrapper .icon:hover {
     transform: scale(1.1);
@@ -326,6 +338,7 @@ section {
   }
   
   .twitter:hover {
+    border-radius: 50%;
     background: #1da1f2;
   }
   
@@ -334,7 +347,14 @@ section {
   }
 
 
-/* Hero Section */
+
+
+
+
+  
+
+
+/* Section 1 - Hero/ Main*/
 .hero {
     background: url('./img/hero.jpg') no-repeat center center/cover;
     height: 100vh;
@@ -343,8 +363,19 @@ section {
 }
 
 .hero_content h1 {
+  color: #fff;
+  text-shadow: 1px 1px 0 #ccc,
+               2px 2px 0 #bbb,
+               3px 3px 0 #aaa,
+               4px 4px 0 #999,
+               5px 5px 5px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
     font-size: 5rem;
     text-align: center;
+}
+
+.hero_content a {
+  text-decoration: none;
 }
 
 /* Latter style */
@@ -383,6 +414,14 @@ section {
     transform: translate(-50%, -300%); 
     opacity: 0;
   }
+
+
+
+
+
+
+
+
 
 /* Section 2 - Peach section */
 .peach {
@@ -455,24 +494,14 @@ section {
   }
   
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
 
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
+
+
+
+
+
+
+
 
 
 /* Section 3 - Skills and Expirience */
@@ -564,7 +593,12 @@ h2 {
 
 
 
-/* Projects Section */
+
+
+
+
+
+/* Section 4 - Projects  */
 .projects {
   background: url('./img/skillimg/skillsbackground.jpg') no-repeat center center/cover;
   text-align: center;
@@ -573,11 +607,35 @@ h2 {
 }
 
 .projects h2 {
+  color: #fff;
+  text-shadow: 1px 1px 0 #ccc,
+               2px 2px 0 #bbb,
+               3px 3px 0 #aaa,
+               4px 4px 0 #999,
+               5px 5px 5px rgba(0, 0, 0, 0.5);
+    font-weight: bold; 
+  top: 150px;
   position: absolute;
-  top: 30%;
-  animation: fadeIn 1s;
+  display: flex;
+  justify-content: space-between;
   text-align: center;
+  gap: 20px;
+}
 
+/* Latter style */
+.projects span {
+display: inline-block; /* Позволяет каждой букве иметь собственное пространство */
+font-size: 3rem; /* Размер букв */
+margin-left: -10px;
+color: #fff; /* Основной цвет текста */
+transition: transform 0.3s ease, color 0.3s ease; /* Плавный переход для цвета и подпрыгивания */
+cursor: pointer; /* Указывает, что на элемент можно кликать */
+}
+
+/* Эффект при наведении */
+.projects span:hover {
+transform: translateY(-10px); /* Поднимает букву вверх на 10px */
+color: #fcb832; /* Изменяет цвет при наведении */
 }
 
 .projects-cards {
@@ -588,14 +646,31 @@ h2 {
   margin: auto;
 }
 
+
 .card {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   padding: 20px;
-  margin: 10px;
   flex: 0 0 30%;
   transition: transform 0.3s ease;
-  
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s, transform 0.8s;
+
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+} 
+
+
+.projects img {
+  position: relative;
+  height: 150px;
+  width: 200px;
+  border-radius: 10px;
+
 }
 
 .card:hover {
@@ -614,119 +689,19 @@ section {
     border-bottom: 1px solid #333;
 }
 
-/* Before-After Section */
-
-.beforafter-text {
-    font-size: 40px; /* Размер шрифта */
-    color: white; /* Цвет текста */
-    text-shadow: 
-        -1px -1px 0px black,  
-        1px -1px 0px black,
-        -1px 1px 0px black,
-        1px 1px 0px black; /* Обводка текста */
-}
 
 
 
 
-.beforeafter {
-    background: url('img/beforeafter.jpg') no-repeat center center/cover;
-    font-family: Arial, sans-serif;
-    color: #fff;
-    padding: 50px 0;
-    text-align: center;
-}
-
-.before-after-section {
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Flex container for comparison blocks */
-.comparison-row {
-    display: flex;
-    flex-wrap: wrap; /* Allow images to wrap on smaller screens */
-    justify-content: center; /* Center items */
-    gap: 30px;
-    padding: 0 20px;
-}
-
-/* Container for each comparison block */
-.comparison-container {
-    position: relative;
-    width: 500px;  /* Adjust width */
-    height: 300px; /* Adjust height */
-    overflow: hidden;
-    border: 2px solid #ffffff; /* Border color for visibility */
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Stronger shadow */
-    margin: 20px; /* Added margin for spacing */
-}
-
-/* Images in the container */
-.comparison-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Before Image */
-.comparison-image.before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-/* After Image with immediate clip-path */
-.comparison-image.after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    clip-path: inset(0 50% 0 0); /* Initially show half */
-}
-
-/* Slider */
-.slider {
-    position: absolute;
-    top: 0;
-    left: 50%; /* Centered by default */
-    width: 4px;
-    height: 100%;
-    background-color: #ffffff;
-    z-index: 3;
-    cursor: ew-resize;
-}
-
-.slider:hover {
-    background-color: #ff1a1a; /* Change color on hover */
-}
 
 
-/* Media Queries */
-@media (max-width: 768px) {
-    h1, h2 {
-        font-size: 32px;
-    }
 
-    p {
-        font-size: 14px;
-    }
 
-    .card {
-        flex: 0 0 80%;
-    }
 
-    .comparison-container {
-        height: 150px; /* Adjust the size for smaller screens */
-        width: 90%; /* Responsive width */
-    }
-}
 
-/* Registration */
+/* Section 5- Contact information and inputs */
 
-.registration {
+.contact_section {
     background: url('./img/mountdark.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
@@ -736,7 +711,7 @@ section {
   }
   
 
-  .registration-container {
+  .contact-container {
     
     padding: 40px;
     width: 100%;
@@ -749,7 +724,7 @@ section {
   }
   
   /* Заголовок */
-  .registration-container h1 {
+  .contact-container h1 {
     margin-bottom: 20px;
     font-size: 24px;
     font-weight: bold;
@@ -779,7 +754,20 @@ section {
     outline: none;
     transition: background 0.3s ease-in-out;
   }
-  
+
+  #input-field{
+  width: 100%;
+  min-height: 50px; /* Минимальная высота */
+  max-height: 300px; /* Максимальная высота (опционально) */
+  resize: none; /* Отключить возможность ручного изменения размера */
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-y: hidden; /* Скрыть вертикальный скролл */
+  }
   .input-group input::placeholder {
     color: rgba(255, 255, 255, 0.5);
   }
@@ -789,7 +777,7 @@ section {
   }
   
   /* Кнопка регистрации */
-  .register-btn {
+  .send-btn {
     width: 100%;
     padding: 10px;
     background-color: rgba(0, 123, 255, 0.8);
@@ -802,7 +790,7 @@ section {
     transition: background-color 0.3s ease;
   }
   
-  .register-btn:hover {
+  .send-btn:hover {
     background-color: rgba(0, 123, 255, 1);
   }
   
