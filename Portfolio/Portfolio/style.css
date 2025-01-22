@@ -44,6 +44,97 @@
     }
   }
 
+/* Preloader */
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1e1e1e;
+  color: #fcb832;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-text {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.loading-bar {
+  width: 300px;
+  height: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-progress {
+  width: 0;
+  height: 100%;
+  background-color: #fcb832;
+  transition: width 0.5s ease;
+}
+
+
+/* Preloader */
+
+.weather-time {
+  z-index: 1;
+  position: fixed;
+  top: 10px;
+  right: 200px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: right;
+}
+
+
+.greeting {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #fff;
+  left: 50%;
+  top: 20%;
+  text-shadow: 1px 1px 0 #ccc;
+  z-index: 1;
+}
+/* Preloader  */
+
+
+/* Expirience */
+
+#experience-counter {
+  position: fixed;
+  bottom: 10px;
+  right: 0;
+  background: rgba(30, 30, 30, 0.8);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Expirience */
+
+
+
+
+
+
+
+
+
+
+
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -250,7 +341,7 @@ section {
     top: 0;
     right: 0;
     border-radius: 5px;
-    transition: top 0.3s ease;
+    transition: top 0.7s ease;
   }
 
 
@@ -638,16 +729,22 @@ transform: translateY(-10px); /* Поднимает букву вверх на 1
 color: #fcb832; /* Изменяет цвет при наведении */
 }
 
-.projects-cards {
+.projects-cards {  
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   width: 80%;
   margin: auto;
+
+  
 }
 
 
 .card {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    padding: 50px;
+    border-radius: 20px;
+
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   padding: 20px;
@@ -688,6 +785,9 @@ section {
     overflow: hidden;
     border-bottom: 1px solid #333;
 }
+
+
+
 
 
 
