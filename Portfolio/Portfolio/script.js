@@ -1,31 +1,3 @@
-// import * as THREE from 'three';
-// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-
-// const container = document.getElementById('avatar-container');
-// const scene = new THREE.Scene();
-// const camera = new THREE.PerspectiveCamera(75, container.offsetWidth / container.offsetHeight, 0.1, 1000);
-// camera.position.set(0, 1.5, 3);
-
-// const renderer = new THREE.WebGLRenderer();
-// renderer.setSize(container.offsetWidth, container.offsetHeight);
-// container.appendChild(renderer.domElement);
-
-// // // Light
-// // const light = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
-// // scene.add(light);
-
-// // // Load Model
-// // const loader = new GLTFLoader();
-// // loader.load('assets/models/avatar.glb', (gltf) => {
-// //     scene.add(gltf.scene);
-// // });
-
-// // // Animation loop
-// // function animate() {
-// //     requestAnimationFrame(animate);
-// //     renderer.render(scene, camera);
-// // }
-// // animate();
 
 
 // preloader

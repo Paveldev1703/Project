@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import axios from 'axios';
 
 const Autocomplete = ({ searchText, setSearchText, setSearchResults }) => {
   const [languageFilter, setLanguageFilter] = useState('');
