@@ -1,0 +1,85 @@
+/* Main */
+.book-tickets-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Arial", sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark mode */
+.dark-mode {
+  background: linear-gradient(to right, #000000, #000000);
+  color: white;
+}
+
+/*Light mode */
+.light-mode {
+  background: linear-gradient(to right, #ffffff, #dbeafe);
+  color: black;
+}
+
+/* BLock with tickets */
+.ticket-selection {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: background 0.3s;
+}
+
+
+/* Button */
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #ff7f50;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.theme-toggle:hover {
+  background: #ff5722;
+  transform: scale(1.05);
+}
+
+/*Input*/
+.ticket-selection input {
+  width: 60px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  outline: none;
+  background: white;
+  color: black;
+}
+
+/* Button booking */
+.book-button {
+  background: #ff7f50;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.book-button:hover {
+  background: black;
+  transform: scale(1.05);
+}

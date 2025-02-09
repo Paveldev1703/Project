@@ -20,25 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 500);
 });
 
-// Expirience 
-function updateExperienceCounter() {
-  const startDate = new Date("2023-01-01"); // Укажите дату начала вашей карьеры
-  const now = new Date();
-  const diffTime = Math.abs(now - startDate);
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  document.getElementById("experience-days").textContent = diffDays;
-}
-
-updateExperienceCounter();
-
-
 
 
 // Time
 function updateTime() {
   const now = new Date();
   const formattedTime = now.toLocaleTimeString();
-  document.getElementById("time").textContent = `Time: ${formattedTime}`;
+  document.getElementById("time").textContent = ` ${formattedTime}`;
 }
 setInterval(updateTime, 1000);
 
@@ -57,22 +45,33 @@ const greetings = {
   de: "Hallo",
   ru: "Привет",
   it: "Ciao",
-  no: "Hei"
-
+  no: "Hei",
+  jp: "こんにちは",
+  pt: "Olá",
+  ar: "مرحبا",
+  ch: "你好",
+  hi: "नमस्ते",
 
 };
 
 // Language change
+let currentIndex = 0; 
+
 function changeGreeting() {
   const langCodes = Object.keys(greetings);
-  const randomLang = langCodes[Math.floor(Math.random() * langCodes.length)];
-  const greetingText = greetings[randomLang];
+  const currentLang = langCodes[currentIndex];
+  const greetingText = greetings[currentLang];
+
+
   document.getElementById("greeting").textContent = greetingText;
+
+  // Обновляем индекс, чтобы он шел по кругу
+  currentIndex = (currentIndex + 1) % langCodes.length;
 }
 
 // Change the greeting every 5 seconds
 changeGreeting();
-setInterval(changeGreeting, 5000);
+setInterval(changeGreeting, 3000);
 
 
 
